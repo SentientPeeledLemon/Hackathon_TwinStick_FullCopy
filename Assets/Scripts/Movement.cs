@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour
         }
         if (Keyboard.current.leftShiftKey.isPressed && dashTimer>=20)
         {
-            rb.AddForce(new Vector3(dirX, 0, dirZ) * 50f, ForceMode.VelocityChange);
+            rb.AddForce(new Vector3(dirX, 0, dirZ).normalized * 25f, ForceMode.VelocityChange);
             dashTimer=0;
         }
 
