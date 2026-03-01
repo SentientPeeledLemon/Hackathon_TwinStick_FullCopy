@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
 
     public Vector3 mousePos;
 
-    public float speed = 6f;
+    public float speed = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,15 +29,11 @@ public class Movement : MonoBehaviour
         float dirZ = Input.GetAxisRaw("Vertical");
 
         Vector3 movementDir = new Vector3(dirX, 0, dirZ);
-        rb.linearVelocity += movementDir * speed * Time.deltaTime;
+        rb.linearVelocity += movementDir.normalized * speed * Time.deltaTime;
 
         if (dashTimer<251)
         {
             dashTimer++;
-        }
-        if (dashTimer >= 250)
-        {
-            Debug.Log("Dash Ready");
         }
         if (Keyboard.current.leftShiftKey.isPressed && dashTimer>=250)
         {

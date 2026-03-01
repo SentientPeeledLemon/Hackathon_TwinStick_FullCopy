@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.Find("Capsule");
+        player = GameObject.Find("TempPlayer");
     }
 
     // Update is called once per frame
