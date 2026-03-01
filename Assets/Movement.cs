@@ -53,18 +53,29 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         dashTimer++;
-        if (Keyboard.current.leftShiftKey.isPressed && dashTimer>250)
+        if (dashTimer >= 250)
+        {
+            Debug.Log("Dash Ready");
+        }
+        if (Keyboard.current.leftShiftKey.isPressed && dashTimer>=250)
         {
             rb.MovePosition(transform.position + new Vector3(dirX, 0, dirZ)*5f);
             dashTimer=0;
         }
 
-        mousePos = Input.mousePosition;
-        mousePos.z = Mathf.Abs(Camera.main.transform.position.z - transform.position.z);
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        mousePos.y=0f;
-        mousePos.z +=9;
-        transform.rotation = Quaternion.LookRotation(mousePos);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        Plane groundPlane = new Plane(Vector3.up, transform.position);
+
+        if (groundPlane.Raycast(ray, out float distance))
+        {
+            Vector3 cursorPos = ray.GetPoint(distance);
+
+            Vector3 direction = cursorPos - transform.position;
+            direction.y = 0f;
+
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
     }
 
 
