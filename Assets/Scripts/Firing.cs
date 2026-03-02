@@ -8,6 +8,8 @@ public class Firing : MonoBehaviour
     private int coolDownTimer;
     public int coolDown;
     public GameObject prefabToUse;
+
+    public string weaponType;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,11 +21,14 @@ public class Firing : MonoBehaviour
     {
         if (Mouse.current.leftButton.isPressed && coolDownTimer >=coolDown)
         {
-            coolDownTimer=0;
-            Quaternion rotation = transform.rotation;
-            GameObject bullet = Instantiate(prefabToUse, transform.position, rotation);
-            Rigidbody  bulletRb = bullet.GetComponent<Rigidbody>();
-            bulletRb.AddForce(transform.up * speed, ForceMode.Impulse);
+            if (weaponType == "Basic")
+            {
+                coolDownTimer=0;
+                Quaternion rotation = transform.rotation;
+                GameObject bullet = Instantiate(prefabToUse, transform.position, rotation);
+                Rigidbody  bulletRb = bullet.GetComponent<Rigidbody>();
+                bulletRb.AddForce(transform.up * speed, ForceMode.Impulse);
+            }
         }
     }
 
