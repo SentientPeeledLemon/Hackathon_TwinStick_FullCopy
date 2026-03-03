@@ -1634,9 +1634,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Firing
   damage: 0
   speed: 20
-  coolDown: 5
-  prefabToUse: {fileID: 5764479228910707514, guid: c6c6ca7886c3ea849a636a8a14752013, type: 3}
-  weaponType: Basic
+  coolDown: 25
+  prefabToUse: {fileID: 5764479228910707514, guid: 72d63a44d83cd204ea55199f55ecbe31, type: 3}
+  flashToUse: {fileID: 6428322740537639049, guid: 584b9cc972a066d4d93b7864b0bc375c, type: 3}
+  weaponType: Shotgun
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class bulletDespawn : MonoBehaviour
+public class Flash : MonoBehaviour
 {
+    private int time;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        time = 0;
     }
 
-    void OnTriggerEnter(Collider other)
+    // Update is called once per frame
+    void FixedUpdate()
     {
-        // Debug.Log("Collided");
-        if (!other.CompareTag("Player") && !other.CompareTag("dontCollide"))
+        time++;
+        if (time>1)
         {
             Destroy(this.gameObject);
         }
