@@ -6,6 +6,8 @@ public class EnemySpawnerScript : MonoBehaviour
     public int spawnInterval = 1;
     private int spawnTimer;
 
+    public int enemyHealth;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

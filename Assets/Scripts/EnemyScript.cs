@@ -6,13 +6,21 @@ public class EnemyScript : MonoBehaviour
     GameObject player;
     NavMeshAgent agent;
 
-    public int health = 10;
+    Firing firingScript;
+
+    public int health;
+
+    private int hitCooldown = 100;
+    private GameObject weapon;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         agent = transform.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
+        weapon = GameObject.Find("Gun");
+        health = GameObject.Find("Arena").GetComponent<EnemySpawnerScript>().enemyHealth;
     }
 
     // Update is called once per frame
@@ -21,19 +29,28 @@ public class EnemyScript : MonoBehaviour
         agent.SetDestination(player.transform.position);
     }
 
+    void FixedUpdate()
+    {
+        if (hitCooldown<50)
+        {
+            hitCooldown++;
+        }    
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            health -= 1;
+            Firing firingScript = weapon.GetComponent<Firing>();
+            health -= firingScript.damage;
             if (health <= 0)
             {
                 Destroy(this.gameObject);
             }
         }
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && hitCooldown>=50)
         {
-            Destroy(this.gameObject);
+            hitCooldown=0;
             Debug.Log("Player hit");
         }
     }

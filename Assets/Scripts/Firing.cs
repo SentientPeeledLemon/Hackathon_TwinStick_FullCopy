@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Firing : MonoBehaviour
 {
-    public float damage;
+    public int damage;
     public float speed;
     private int coolDownTimer;
     public int coolDown;
@@ -29,7 +29,14 @@ public class Firing : MonoBehaviour
                 GameObject bullet = Instantiate(prefabToUse, transform.position, rotation);
                 GameObject flash = Instantiate(flashToUse, transform.position, rotation);
                 Rigidbody  bulletRb = bullet.GetComponent<Rigidbody>();
-                bulletRb.AddForce(transform.up * speed, ForceMode.Impulse);
+                if (Random.Range(0f, 1f) > 0.5)
+                {
+                    bulletRb.AddForce(transform.up * speed + new Vector3(Random.Range(0f, 2f),0,Random.Range(0f, 2f)), ForceMode.Impulse);
+                }
+                else
+                {
+                    bulletRb.AddForce(transform.up * speed - new Vector3(Random.Range(0f, 2f),0,Random.Range(0f, 2f)), ForceMode.Impulse);
+                }
             }else if (weaponType == "Shotgun")
             {
                 coolDownTimer=0;

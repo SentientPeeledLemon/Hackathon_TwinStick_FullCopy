@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShotgunPowerup : MonoBehaviour
+public class AutomaticRiflePowerup : MonoBehaviour
 {
     private GameObject weapon;
     public GameObject powerupPrefab;
@@ -17,11 +17,11 @@ public class ShotgunPowerup : MonoBehaviour
         {
             Firing firingScript = weapon.GetComponent<Firing>();
             firingScript.prefabToUse = powerupPrefab;
-            firingScript.damage = 10;
+            firingScript.damage = 30;
             firingScript.speed = 20f;
-            firingScript.coolDown = 25;
+            firingScript.coolDown = 5;
             firingScript.flashToUse = powerupFlash;
-            firingScript.weaponType = "Shotgun";
+            firingScript.weaponType = "Basic";
             Destroy(this.gameObject);
         }
     }
