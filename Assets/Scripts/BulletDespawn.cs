@@ -7,10 +7,10 @@ public class bulletDespawn : MonoBehaviour
     {
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         // Debug.Log("Collided");
-        if (!other.CompareTag("Player") && !other.CompareTag("dontCollide"))
+        if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("PowerUp"))
         {
             Destroy(this.gameObject);
         }
