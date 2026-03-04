@@ -35,7 +35,7 @@ public class Firing : MonoBehaviour
                 coolDownTimer=0;
                 Quaternion rotation = transform.rotation;
                 GameObject flash = Instantiate(flashToUse, transform.position, rotation);
-                for (int i = 0; i<10; i++)
+                for (int i = 0; i<20; i++)
                 {
                     GameObject bullet = Instantiate(prefabToUse, transform.position, rotation);
                     Rigidbody  bulletRb = bullet.GetComponent<Rigidbody>();

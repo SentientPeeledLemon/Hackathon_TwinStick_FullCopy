@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //agent.SetDestination(player.transform.position);
+        agent.SetDestination(player.transform.position);
     }
 
     void OnCollisionEnter(Collision other)
