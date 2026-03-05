@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Flash : MonoBehaviour
 {
-    private int time;
+    public int time;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

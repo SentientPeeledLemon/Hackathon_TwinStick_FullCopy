@@ -42,9 +42,18 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             Firing firingScript = weapon.GetComponent<Firing>();
-            health -= firingScript.damage;
+            if (!(firingScript.weaponType == "Grenade Launcher"))
+            {
+                health -= firingScript.damage;
+            }
+            else
+            {
+                float distance = Vector3.Distance(this.transform.position, other.gameObject.transform.position);
+                health -= firingScript.damage/(int)Mathf.Clamp(distance, 1f, 5f);;
+            }
             if (health <= 0)
             {
+                Debug.Log("Enemy died");
                 Destroy(this.gameObject);
             }
         }

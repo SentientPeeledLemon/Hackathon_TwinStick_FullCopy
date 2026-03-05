@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fda5e300aa51c3418f1f9650e12d9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flash
+  time: 0
 --- !u!1 &6428322740537639049
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,3 +244,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fda5e300aa51c3418f1f9650e12d9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flash
+  time: 1

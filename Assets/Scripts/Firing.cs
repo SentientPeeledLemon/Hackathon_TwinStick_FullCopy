@@ -10,11 +10,14 @@ public class Firing : MonoBehaviour
     public GameObject prefabToUse;
     public GameObject flashToUse;
 
+    private GameObject player;
+
     public string weaponType;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         coolDownTimer = 25;
+        player = GameObject.Find("TempPlayer");
     }
 
     // Update is called once per frame
@@ -55,7 +58,17 @@ public class Firing : MonoBehaviour
                         bulletRb.AddForce(transform.up * speed - new Vector3(Random.Range(0f, 5f),0,Random.Range(0f, 5f)), ForceMode.Impulse);
                     }
                 }
+            }else if (weaponType == "Grenade Launcher")
+            {
+                coolDownTimer=0;
+                Quaternion rotation = transform.rotation;
+                GameObject flash = Instantiate(flashToUse, transform.position, rotation);
+                GameObject bullet = Instantiate(prefabToUse, transform.position, rotation);
+                Rigidbody  bulletRb = bullet.GetComponent<Rigidbody>();
 
+                Vector3 playerVelocity = player.GetComponent<Rigidbody>().linearVelocity;
+                playerVelocity.y = 3;
+                bulletRb.AddForce(transform.up * speed + playerVelocity, ForceMode.Impulse);
             }
         }
     }
