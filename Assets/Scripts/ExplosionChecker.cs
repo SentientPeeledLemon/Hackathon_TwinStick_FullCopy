@@ -27,12 +27,12 @@ public class ExplosionChecker : MonoBehaviour
         Debug.Log("Collided with: " + other.gameObject.name);
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Exploded with: " + other.gameObject.name);
-            other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(1000f, transform.position, 150f, 1000f);
+            EnemyScript enemy = other.gameObject.GetComponent<EnemyScript>();
+            enemy.knockBack(transform.position, 100f);
         }else if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Exploded with: " + other.gameObject.name);
-            other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(100f, transform.position, 150f, 100f);
+            other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(100f, transform.position, 150f, 50f);
         }
     }
 }

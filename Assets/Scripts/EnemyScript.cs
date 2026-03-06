@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -10,13 +11,18 @@ public class EnemyScript : MonoBehaviour
 
     public int health;
 
-    private int hitCooldown = 100;
     private GameObject weapon;
+
+    public int knockbackTimer;
+
+    private Rigidbody rb;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = this.GetComponent<Rigidbody>();
+        knockbackTimer = 1000;
         agent = transform.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         weapon = GameObject.Find("Gun");
@@ -26,15 +32,39 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.transform.position);
+        if (agent.enabled){
+            agent.SetDestination(player.transform.position);
+        }
     }
 
     void FixedUpdate()
     {
-        if (hitCooldown<50)
-        {
-            hitCooldown++;
-        }    
+
+    }
+
+    public void knockBack(Vector3 explosionPos, float force)
+    {
+        StartCoroutine(knockBackEnumerator(explosionPos, force));
+    }
+
+    private IEnumerator knockBackEnumerator(Vector3 explosionPos, float force)
+    {
+        agent.enabled = false;
+        agent.updatePosition = false;
+        agent.updateRotation = false;
+
+        rb.isKinematic = false;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        rb.AddExplosionForce(force, explosionPos + Vector3.down, 150f, 1f, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(3f);
+
+        rb.isKinematic = true;
+        agent.enabled = true;
+        agent.updatePosition = true;
+        agent.updateRotation = true;
     }
 
     void OnCollisionEnter(Collision other)
@@ -49,7 +79,7 @@ public class EnemyScript : MonoBehaviour
             else
             {
                 float distance = Vector3.Distance(this.transform.position, other.gameObject.transform.position);
-                health -= firingScript.damage/(int)Mathf.Clamp(distance, 1f, 5f);;
+                health -= firingScript.damage/(int)Mathf.Clamp(distance, 1f, 5f);
             }
             if (health <= 0)
             {
@@ -57,9 +87,8 @@ public class EnemyScript : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        if (other.gameObject.CompareTag("Player") && hitCooldown>=50)
+        if (other.gameObject.CompareTag("Player"))
         {
-            hitCooldown=0;
             Debug.Log("Player hit");
         }
     }
