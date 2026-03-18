@@ -17,7 +17,7 @@ public class GrenadeLauncherPowerup : MonoBehaviour
         {
             Firing firingScript = weapon.GetComponent<Firing>();
             firingScript.prefabToUse = powerupPrefab;
-            firingScript.damage = 150;
+            firingScript.damage = 300;
             firingScript.speed = 10f;
             firingScript.coolDown = 40;
             firingScript.flashToUse = powerupFlash;

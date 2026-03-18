@@ -59,7 +59,7 @@ public class EnemyScript : MonoBehaviour
 
         rb.AddExplosionForce(force, explosionPos + Vector3.down, 150f, 1f, ForceMode.Impulse);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         rb.isKinematic = true;
         agent.enabled = true;

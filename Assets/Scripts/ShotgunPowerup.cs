@@ -19,7 +19,7 @@ public class ShotgunPowerup : MonoBehaviour
             firingScript.prefabToUse = powerupPrefab;
             firingScript.damage = 10;
             firingScript.speed = 20f;
-            firingScript.coolDown = 25;
+            firingScript.coolDown = 35;
             firingScript.flashToUse = powerupFlash;
             firingScript.weaponType = "Shotgun";
             Destroy(this.gameObject);
