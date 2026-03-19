@@ -90,6 +90,7 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player hit");
+            Destroy(this.gameObject);
         }
     }
 }

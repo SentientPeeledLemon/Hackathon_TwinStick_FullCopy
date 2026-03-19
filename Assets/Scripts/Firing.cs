@@ -34,11 +34,13 @@ public class Firing : MonoBehaviour
                 Rigidbody  bulletRb = bullet.GetComponent<Rigidbody>();
                 if (Random.Range(0f, 1f) > 0.5)
                 {
-                    bulletRb.AddForce(transform.up * speed + new Vector3(Random.Range(0f, 2f),0,Random.Range(0f, 2f)), ForceMode.Impulse);
+                    bulletRb.AddForce(transform.up * speed, ForceMode.Impulse);
+                    //+ new Vector3(Random.Range(0f, 2f),0,Random.Range(0f, 2f))
                 }
                 else
                 {
-                    bulletRb.AddForce(transform.up * speed - new Vector3(Random.Range(0f, 2f),0,Random.Range(0f, 2f)), ForceMode.Impulse);
+                    bulletRb.AddForce(transform.up * speed, ForceMode.Impulse);
+                    //- new Vector3(Random.Range(0f, 2f),0,Random.Range(0f, 2f))
                 }
             }else if (weaponType == "Shotgun")
             {
