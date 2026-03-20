@@ -17,6 +17,8 @@ public class EnemyScript : MonoBehaviour
 
     private Rigidbody rb;
 
+    public ParticleSystem hitEffect;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -87,6 +89,7 @@ public class EnemyScript : MonoBehaviour
                 Debug.Log("Enemy died");
                 Destroy(this.gameObject);
             }
+            Instantiate(hitEffect, gameObject.transform.position, Quaternion.identity);
         }
         if (other.gameObject.CompareTag("Player"))
         {

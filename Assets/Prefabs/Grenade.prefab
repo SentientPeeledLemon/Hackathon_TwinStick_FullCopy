@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GrenadeDespawn
   flashToUse: {fileID: 8103530366534241643, guid: 54986af4c76f2c844b4df6883815a3a9, type: 3}
   explosionCheck: {fileID: 6020851908987816307, guid: 15a47219d0a1ae549b997f45c62a6072, type: 3}
+  explosionEffect: {fileID: 5648600630349588765, guid: f6bbc3f86ff0c47e9bd8abdeff7869bc, type: 3}
 --- !u!1001 &6860561142603913921
 PrefabInstance:
   m_ObjectHideFlags: 0

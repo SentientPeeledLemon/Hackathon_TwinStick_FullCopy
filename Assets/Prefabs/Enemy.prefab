@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
   health: 5
   knockbackTimer: 0
+  hitEffect: {fileID: 9045644670127813962, guid: b379b7099cf3941cd8a3c580030424f3, type: 3}
 --- !u!54 &6066454535526111736
 Rigidbody:
   m_ObjectHideFlags: 0

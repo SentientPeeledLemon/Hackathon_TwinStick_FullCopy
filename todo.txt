@@ -6,6 +6,7 @@ TODO -- DEADLINE FRIDAY NIGHT
 3. Health system [X]
 4. UI for health [X]
 5. Score UI [] -- TODO for them
-5. Grenade particles []
-6. GameOver Screen []
-7. 
+5. Grenade particles [X]
+6. GameOver Screen [X]
+7. Enemy Hit Particles [X]
+8. Fix Rigidbody Spazz [X]

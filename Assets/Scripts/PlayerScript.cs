@@ -19,15 +19,6 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(health <= 0)
-        {
-            
-        }
-    }
-
     void FixedUpdate()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
