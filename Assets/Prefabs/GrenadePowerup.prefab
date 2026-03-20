@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 571539529939762637}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.2, y: 1, z: 6.76}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -126,3 +126,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GrenadeLauncherPowerup
   powerupPrefab: {fileID: 903151294250623558, guid: d4551c121b8beff4ebfba5857419d153, type: 3}
   powerupFlash: {fileID: 6428322740537639049, guid: 584b9cc972a066d4d93b7864b0bc375c, type: 3}
+  duration: 5

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class Movement : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     private Rigidbody rb;
     private int dashTimer = 0;
@@ -10,6 +10,8 @@ public class Movement : MonoBehaviour
     public Vector3 mousePos;
 
     public float speed = 0f;
+
+    public int health = 20;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +22,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(health <= 0)
+        {
+            
+        }
     }
 
     void FixedUpdate()

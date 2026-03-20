@@ -1,0 +1,11 @@
+TODO -- DEADLINE FRIDAY NIGHT
+------------------------------
+
+1. Powerup spawning [X]
+2. Powerup timers [X]
+3. Health system [X]
+4. UI for health [X]
+5. Score UI [] -- TODO for them
+5. Grenade particles []
+6. GameOver Screen []
+7. 

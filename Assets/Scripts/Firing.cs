@@ -8,7 +8,9 @@ public class Firing : MonoBehaviour
     private int coolDownTimer;
     public int coolDown;
     public GameObject prefabToUse;
+    public GameObject defaultPrefab;
     public GameObject flashToUse;
+    public GameObject defaultFlash;
 
     private GameObject player;
 
@@ -42,7 +44,8 @@ public class Firing : MonoBehaviour
                     bulletRb.AddForce(transform.up * speed, ForceMode.Impulse);
                     //- new Vector3(Random.Range(0f, 2f),0,Random.Range(0f, 2f))
                 }
-            }else if (weaponType == "Shotgun")
+            }
+            else if (weaponType == "Shotgun")
             {
                 coolDownTimer=0;
                 Quaternion rotation = transform.rotation;

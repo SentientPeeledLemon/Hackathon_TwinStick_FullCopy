@@ -75,6 +75,7 @@ public class EnemyScript : MonoBehaviour
             if (!(firingScript.weaponType == "Grenade Launcher"))
             {
                 health -= firingScript.damage;
+                Debug.Log("Enemy hit, health is now " + health);
             }
             else
             {
@@ -89,7 +90,7 @@ public class EnemyScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player hit");
+            player.GetComponent<PlayerScript>().health -= 1;
             Destroy(this.gameObject);
         }
     }
