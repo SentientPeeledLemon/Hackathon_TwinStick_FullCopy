@@ -94,6 +94,7 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             player.GetComponent<PlayerScript>().health -= 1;
+            Instantiate(hitEffect, gameObject.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
