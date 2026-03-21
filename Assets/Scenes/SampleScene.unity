@@ -2700,6 +2700,18 @@ PrefabInstance:
       propertyPath: health
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7040212618282955724, guid: 11deb1feb50a1a44bad10ca3565b41ba, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040212618282955724, guid: 11deb1feb50a1a44bad10ca3565b41ba, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040212618282955724, guid: 11deb1feb50a1a44bad10ca3565b41ba, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7252387699516229984, guid: 11deb1feb50a1a44bad10ca3565b41ba, type: 3}
       propertyPath: m_Layer
       value: 7
