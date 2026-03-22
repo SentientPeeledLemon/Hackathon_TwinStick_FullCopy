@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShotgunPowerup : MonoBehaviour
+public class PotionLauncherPowerup : MonoBehaviour
 {
     private GameObject weapon;
     public GameObject powerupPrefab;
@@ -22,11 +22,11 @@ public class ShotgunPowerup : MonoBehaviour
         {
             Firing firingScript = weapon.GetComponent<Firing>();
             firingScript.prefabToUse = powerupPrefab;
-            firingScript.damage = 10;
-            firingScript.speed = 20f;
-            firingScript.coolDown = 35;
+            firingScript.damage = 300;
+            firingScript.speed = 10f;
+            firingScript.coolDown = 40;
             firingScript.flashToUse = powerupFlash;
-            firingScript.weaponType = "Shotgun";
+            firingScript.weaponType = "Grenade Launcher";
 
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<Collider>().enabled = false;

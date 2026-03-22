@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1202491899484678689}
   - component: {fileID: 1223268741205259736}
   m_Layer: 0
-  m_Name: ShotgunPowerup
+  m_Name: SpreadPowerup
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

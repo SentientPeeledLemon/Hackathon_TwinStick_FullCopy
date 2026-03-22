@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1078764651085266319}
   - component: {fileID: -3607140701934175757}
   m_Layer: 0
-  m_Name: Grenade
+  m_Name: Potion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

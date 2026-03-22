@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GrenadeDespawn : MonoBehaviour
+public class PotionDespawn : MonoBehaviour
 {
     public GameObject flashToUse;
     public GameObject explosionCheck;

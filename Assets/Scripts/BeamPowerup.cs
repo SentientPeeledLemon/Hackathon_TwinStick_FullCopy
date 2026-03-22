@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AutomaticRiflePowerup : MonoBehaviour
+public class BeamPowerup : MonoBehaviour
 {
     private GameObject weapon;
     private GameObject bullet;

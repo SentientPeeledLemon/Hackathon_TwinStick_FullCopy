@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GrenadeLauncherPowerup : MonoBehaviour
+public class SpreadPowerup : MonoBehaviour
 {
     private GameObject weapon;
     public GameObject powerupPrefab;
@@ -22,11 +22,11 @@ public class GrenadeLauncherPowerup : MonoBehaviour
         {
             Firing firingScript = weapon.GetComponent<Firing>();
             firingScript.prefabToUse = powerupPrefab;
-            firingScript.damage = 300;
-            firingScript.speed = 10f;
-            firingScript.coolDown = 40;
+            firingScript.damage = 10;
+            firingScript.speed = 20f;
+            firingScript.coolDown = 35;
             firingScript.flashToUse = powerupFlash;
-            firingScript.weaponType = "Grenade Launcher";
+            firingScript.weaponType = "Shotgun";
 
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<Collider>().enabled = false;
