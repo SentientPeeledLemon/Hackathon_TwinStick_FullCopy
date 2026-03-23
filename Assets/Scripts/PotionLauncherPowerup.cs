@@ -13,7 +13,7 @@ public class PotionLauncherPowerup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        weapon = GameObject.Find("Gun");
+        weapon = GameObject.Find("Wand");
     }
 
     void OnTriggerEnter(Collider other)
@@ -26,7 +26,7 @@ public class PotionLauncherPowerup : MonoBehaviour
             firingScript.speed = 10f;
             firingScript.coolDown = 40;
             firingScript.flashToUse = powerupFlash;
-            firingScript.weaponType = "Grenade Launcher";
+            firingScript.weaponType = "PotionLauncher";
 
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<Collider>().enabled = false;

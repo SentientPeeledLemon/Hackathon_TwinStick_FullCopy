@@ -2636,6 +2636,10 @@ PrefabInstance:
       propertyPath: defaultPrefab
       value: 
       objectReference: {fileID: 4064881490519429957, guid: c6c6ca7886c3ea849a636a8a14752013, type: 3}
+    - target: {fileID: 2699415859149727933, guid: 11deb1feb50a1a44bad10ca3565b41ba, type: 3}
+      propertyPath: m_Name
+      value: Wand
+      objectReference: {fileID: 0}
     - target: {fileID: 4163159028005160610, guid: 11deb1feb50a1a44bad10ca3565b41ba, type: 3}
       propertyPath: m_Name
       value: TempPlayer

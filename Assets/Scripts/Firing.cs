@@ -45,7 +45,7 @@ public class Firing : MonoBehaviour
                     //- new Vector3(Random.Range(0f, 2f),0,Random.Range(0f, 2f))
                 }
             }
-            else if (weaponType == "Shotgun")
+            else if (weaponType == "Spread")
             {
                 coolDownTimer=0;
                 Quaternion rotation = transform.rotation;
@@ -63,7 +63,7 @@ public class Firing : MonoBehaviour
                         bulletRb.AddForce(transform.up * speed - new Vector3(Random.Range(0f, 5f),0,Random.Range(0f, 5f)), ForceMode.Impulse);
                     }
                 }
-            }else if (weaponType == "Grenade Launcher")
+            }else if (weaponType == "PotionLauncher")
             {
                 coolDownTimer=0;
                 Quaternion rotation = transform.rotation;

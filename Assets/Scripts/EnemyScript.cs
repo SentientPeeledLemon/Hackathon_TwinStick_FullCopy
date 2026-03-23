@@ -27,7 +27,7 @@ public class EnemyScript : MonoBehaviour
         knockbackTimer = 1000;
         agent = transform.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
-        weapon = GameObject.Find("Gun");
+        weapon = GameObject.Find("Wand");
         health = GameObject.Find("Arena").GetComponent<EnemySpawnerScript>().enemyHealth;
     }
 
@@ -74,7 +74,7 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             Firing firingScript = weapon.GetComponent<Firing>();
-            if (!(firingScript.weaponType == "Grenade Launcher"))
+            if (!(firingScript.weaponType == "PotionLauncher"))
             {
                 health -= firingScript.damage;
                 Debug.Log("Enemy hit, health is now " + health);

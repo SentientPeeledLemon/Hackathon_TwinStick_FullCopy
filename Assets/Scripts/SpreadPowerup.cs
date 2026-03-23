@@ -13,7 +13,7 @@ public class SpreadPowerup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        weapon = GameObject.Find("Gun");
+        weapon = GameObject.Find("Wand");
     }
 
     void OnTriggerEnter(Collider other)
@@ -26,7 +26,7 @@ public class SpreadPowerup : MonoBehaviour
             firingScript.speed = 20f;
             firingScript.coolDown = 35;
             firingScript.flashToUse = powerupFlash;
-            firingScript.weaponType = "Shotgun";
+            firingScript.weaponType = "Spread";
 
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<Collider>().enabled = false;
