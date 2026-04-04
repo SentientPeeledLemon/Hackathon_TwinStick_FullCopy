@@ -29,10 +29,6 @@ public class ExplosionChecker : MonoBehaviour
         {
             EnemyScript enemy = other.gameObject.GetComponent<EnemyScript>();
             enemy.knockBack(transform.position, 100f);
-        }else if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Exploded with: " + other.gameObject.name);
-            other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(100f, transform.position, 150f, 50f);
         }
     }
 }
